@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://anyscreenrecorder.github.io/sitemap.xml

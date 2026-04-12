@@ -1,1 +1,484 @@
-<button>Subcribe</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Any Screen Recorder | Lightweight PC Screen Recorder</title>
+    <meta name="title" content="Any Screen Recorder | Lightweight PC Screen Recorder">
+    <meta name="description" content="Download Any Screen Recorder for Windows, an efficient screen recorder for budget PCs. Record gameplay, desktop screens, and internal audio with minimal CPU usage. File size: Just 2.39 MB.">
+    <meta name="keywords" content="Any Screen Recorder, screen recorder for low end pc, lightweight screen recorder, gameplay recorder, c++ recorder, bsr studios, screen recorder without watermark">
+    <meta name="author" content="BSR Studios">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="canonical" href="https://anyscreenrecorder.github.io/" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anyscreenrecorder.github.io/">
+    <meta property="og:title" content="Any Screen Recorder | Lightweight PC Screen Recorder">
+    <meta property="og:description" content="An efficient 2.39 MB screen recording tool for Windows. Capture smooth gameplay and desktop activity with minimal system impact.">
+    <meta property="og:image" content="https://github.com/AryanMewada/Resources/raw/main/Any_Screen_Recorder.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://anyscreenrecorder.github.io/">
+    <meta property="twitter:title" content="Any Screen Recorder | Lightweight PC Screen Recorder">
+    <meta property="twitter:description" content="An efficient 2.39 MB screen recording tool for Windows. Capture smooth gameplay and desktop activity with minimal system impact.">
+    <meta property="twitter:image" content="https://github.com/AryanMewada/Resources/raw/main/Any_Screen_Recorder.png">
+
+    <link rel="icon" type="image/png" href="https://github.com/AryanMewada/Resources/raw/main/Any_Screen_Recorder.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Any Screen Recorder",
+      "url": "https://anyscreenrecorder.github.io/",
+      "operatingSystem": "Windows 7, 10, 11",
+      "applicationCategory": "MultimediaApplication",
+      "fileSize": "2.39 MB",
+      "softwareVersion": "1.0.0",
+      "description": "Any Screen Recorder is a lightweight screen capture software designed to minimize CPU usage. It captures desktop and gameplay activity efficiently without adding watermarks.",
+      "author": {
+        "@type": "Organization",
+        "name": "BSR Studios",
+        "url": "https://bsr-studios.github.io/"
+      },
+      "image": "https://github.com/AryanMewada/Resources/raw/main/Any_Screen_Recorder.png",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "BSR Studios",
+      "url": "https://bsr-studios.github.io/",
+      "logo": "https://bsr-studios.github.io/logo.png"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Does it work well on older computers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, the application is designed to be lightweight by delaying the heavy video encoding process until after you finish recording."
+        }
+      },{
+        "@type": "Question",
+        "name": "Is there a watermark on the recorded videos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, the software does not add any watermarks to the final exported video."
+        }
+      },{
+        "@type": "Question",
+        "name": "Are there any recording time limits?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The software itself does not impose a time limit. Your recording length is only limited by the available storage space on your drive."
+        }
+      }]
+    }
+    </script>
+
+    <style>
+        /* Premium Dark Theme */
+        :root {
+            --bg-color: #0f1115;
+            --surface: #181b21;
+            --surface-light: #22262f;
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+            --accent: #10b981;
+            --warning: #f59e0b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.7; overflow-x: hidden; }
+
+        /* Unified Navigation */
+        nav { display: flex; align-items: center; justify-content: space-between; padding: 15px 5%; background: rgba(15, 17, 21, 0.8); border-bottom: 1px solid var(--border); position: relative; top: 0; z-index: 100; backdrop-filter: blur(10px); }
+        .nav-left { flex: 1; display: flex; align-items: center; }
+        .nav-left img { width: 38px; height: 38px; border-radius: 50%; object-fit: cover; }
+        .nav-center { flex: 1; display: flex; justify-content: center; font-weight: 800; font-size: 1.3rem; color: var(--text-main); letter-spacing: -0.5px; text-decoration: none; }
+        .nav-right { flex: 1; display: flex; justify-content: flex-end; gap: 20px; align-items: center; }
+        .nav-right a { color: var(--text-muted); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+        .nav-right a:hover { color: var(--text-main); }
+        .nav-btn { background: rgba(79, 70, 229, 0.1); color: var(--primary) !important; padding: 8px 20px; border-radius: 8px; font-weight: 600; border: 1px solid rgba(79, 70, 229, 0.2); transition: all 0.3s; }
+        .nav-btn:hover { background: var(--primary); color: white !important; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+
+        /* Hero Section */
+        .hero { text-align: center; padding: 50px 0; }
+        .hero-badge { display: inline-block; background: rgba(16, 185, 129, 0.1); color: var(--accent); padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 20px; border: 1px solid rgba(16, 185, 129, 0.2); }
+        .hero h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 20px; background: linear-gradient(to right, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin: 0 auto 40px; }
+        
+        /* Download Area */
+        .download-card { background: linear-gradient(145deg, var(--surface), var(--bg-color)); border: 1px solid var(--border); border-radius: 24px; padding: 40px; text-align: center; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); position: relative; }
+        .dl-app-logo { width: 90px; height: 90px; border-radius: 25%; object-fit: cover; margin: 0 auto 20px auto; display: block; border: 2px solid rgba(255,255,255,0.1); box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
+        
+        /* Buttons */
+        .btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 10px; }
+        .btn-download { display: inline-block; background: var(--primary); color: white; padding: 16px 40px; border-radius: 12px; font-size: 1.1rem; font-weight: 600; text-decoration: none; transition: all 0.2s; box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3); }
+        .btn-download:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 15px 30px rgba(79, 70, 229, 0.4); }
+        .btn-secondary { display: inline-block; background: rgba(79, 70, 229, 0.1); color: #a5b4fc; padding: 16px 40px; border-radius: 12px; font-size: 1.1rem; font-weight: 600; text-decoration: none; transition: all 0.2s; border: 1px solid rgba(79, 70, 229, 0.3); }
+        .btn-secondary:hover { background: rgba(79, 70, 229, 0.2); color: white; transform: translateY(-2px); }
+
+        .stats { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 25px; color: var(--text-muted); font-size: 0.95rem; }
+
+        /* Sections */
+        section { margin-top: 60px; }
+        .sec-title { font-size: 2rem; font-weight: 700; margin-bottom: 25px; color: var(--text-main); display: flex; align-items: center; gap: 15px; }
+        .sec-title::before { content: ''; display: block; width: 8px; height: 30px; background: var(--primary); border-radius: 4px; }
+        .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 30px; }
+        
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        
+        .feature-list { list-style: none; }
+        .feature-list li { margin-bottom: 15px; padding-left: 30px; position: relative; color: var(--text-muted); }
+        .feature-list li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--primary); font-weight: bold; }
+        .feature-list strong { color: var(--text-main); }
+
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .gallery img { width: 100%; height: auto; border-radius: 12px; cursor: zoom-in; transition: transform 0.2s; border: 1px solid var(--border); }
+        .gallery img:hover { transform: scale(1.02); border-color: var(--primary); }
+
+        .tab-box { background: var(--surface-light); padding: 20px; border-radius: 12px; margin-bottom: 15px; border-left: 4px solid var(--primary); }
+        .tab-box.warning { border-left-color: var(--warning); }
+        .tab-box h4 { color: var(--text-main); margin-bottom: 5px; font-size: 1.1rem; }
+        .tab-box.warning h4 { color: var(--warning); }
+        .tab-box p { color: var(--text-muted); font-size: 0.95rem; margin: 0; }
+
+        .spec-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .spec-table th, .spec-table td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
+        .spec-table th { color: var(--primary); width: 30%; }
+        .spec-table td { color: var(--text-muted); }
+
+        /* Blog Post Specific Premium Styling */
+        .blog-post { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 40px; margin-top: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .blog-post h1 { font-size: 2rem; font-weight: 800; color: white; margin-bottom: 25px; line-height: 1.3; }
+        .blog-post h2 { font-size: 1.5rem; font-weight: 700; color: var(--text-main); margin: 40px 0 15px; display: flex; align-items: center; gap: 10px; }
+        .blog-post h2::before { content: ''; display: block; width: 4px; height: 18px; background: var(--primary); border-radius: 2px; }
+        .blog-post h3 { font-size: 1.2rem; color: var(--accent); margin: 25px 0 10px; }
+        .blog-post p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; margin-bottom: 15px; }
+        .blog-post a { color: var(--primary); text-decoration: none; transition: 0.2s; font-weight: 500; }
+        .blog-post a:hover { color: var(--primary-hover); text-decoration: underline; }
+        .blog-post ul, .blog-post ol { padding-left: 20px; color: var(--text-muted); font-size: 1.05rem; margin-bottom: 20px; }
+        .blog-post li { margin-bottom: 8px; line-height: 1.6; }
+        .blog-post strong { color: var(--text-main); font-weight: 600; }
+        .blog-post code { background: var(--surface-light); padding: 3px 6px; border-radius: 6px; font-size: 0.9em; color: #cbd5e1; border: 1px solid rgba(255,255,255,0.1); }
+
+        #lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); display: none; justify-content: center; align-items: center; z-index: 9999; cursor: zoom-out; }
+        #lightbox img { max-width: 90%; max-height: 90%; border-radius: 8px; box-shadow: 0 0 50px rgba(0,0,0,0.5); }
+
+        footer { border-top: 1px solid var(--border); padding: 40px 20px; text-align: center; margin-top: 80px; color: var(--text-muted); font-size: 0.95rem; }
+        .footer-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; margin-bottom: 25px; }
+        .footer-nav a { color: var(--text-muted); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+        .footer-nav a:hover { color: var(--primary); }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .grid-2 { grid-template-columns: 1fr; }
+            .nav-center { display: none; }
+            .blog-post { padding: 25px 20px; }
+            .blog-post h1 { font-size: 1.6rem; }
+            .blog-post h2 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav aria-label="Main Navigation">
+        <div class="nav-left">
+            <a href="https://bsr-studios.github.io">
+                <img src="https://bsr-studios.github.io/logo.png" alt="BSR Studios Logo" onerror="this.src='https://via.placeholder.com/38x38/181b21/fff?text=BSR'">
+            </a>
+        </div>
+        <a href="https://bsr-studios.github.io" class="nav-center">BSR Studios</a>
+        <div class="nav-right">
+            <a href="https://bsr-studios.github.io/apps.html">All Apps</a>
+            <a href="#download-section" class="btn-nav">Get Recorder</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        
+        <header class="hero">
+            <span class="hero-badge">v1.0.0 is out now!</span>
+            <h1>Capture Gameplay.<br>Lag-Free Recording.</h1>
+            <p>An efficient Windows screen recorder optimized for budget PCs. Capture gameplay or record your screen with minimal system impact.</p>
+            
+            <div id="download-section" class="download-card">
+                <img src="https://github.com/AryanMewada/Resources/raw/main/Any_Screen_Recorder.png" alt="Any Screen Recorder Logo" class="dl-app-logo">
+                
+                <h2 style="margin-bottom: 25px; font-size: 1.6rem;">Download Any Screen Recorder</h2>
+                
+                <div class="btn-group">
+                    <a href="https://bsr-download-tracker.aryanmewadastudios.workers.dev/download/anyscreenrecorder" target="_blank" class="btn-download" onclick="triggerDownload()">Download for Windows</a>
+                    <a href="https://github.com/BSR-Studios" target="_blank" class="btn-secondary">View on GitHub</a>
+                </div>
+                
+                <div class="stats">
+                    <span id="downloadCount">🔥 Loading downloads...</span>
+                    <span>• Windows 7/10/11</span>
+                    <span style="color: #60a5fa; font-weight: 600;">• Size: 2.39 MB</span>
+                    <span>• Free to use</span>
+                </div>
+            </div>
+        </header>
+
+        <section id="features">
+            <h2 class="sec-title">Optimized for Performance</h2>
+            <div class="card">
+                <p style="color: var(--text-muted); margin-bottom: 25px;">Standard screen recording applications often encode video in real-time, which can consume a significant amount of CPU and memory. This sometimes leads to performance drops while using resource-heavy applications or games. <br><br><strong>Any Screen Recorder</strong> takes a different approach. It captures raw screen data directly and saves it as a temporary <code>.screc</code> file during your session. This helps keep CPU usage relatively low. Once you are done recording, the software compiles this data into a standard MP4 file.</p>
+                
+                <h3 style="margin-bottom: 15px; font-size: 1.2rem;">Core Features</h3>
+                <ul class="feature-list">
+                    <li><strong>⚙️ Optimized Architecture:</strong> Separates the screen capture process from video encoding to help maintain your system's performance.</li>
+                    <li><strong>🔈 Clear Audio Capture:</strong> Records internal system audio alongside your screen activity using Windows core audio APIs.</li>
+                    <li><strong>🖱️ Cursor Highlighting:</strong> Includes an option to highlight mouse clicks, making it useful for creating tutorials or presentations.</li>
+                    <li><strong>📊 Flexible Settings:</strong> Allows you to choose your preferred recording resolution and frame rate (up to 60 FPS) based on your needs.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="sec-title">Application Interface</h2>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Click any screenshot to enlarge.</p>
+            <div class="gallery">
+                <img src="https://github.com/AryanMewada/Resources/raw/main/Any-Screen-Recorder/anyscrenrecorder.png" alt="Light Theme Interface" onclick="openLightbox(this.src)">
+                <img src="https://github.com/AryanMewada/Resources/raw/main/Any-Screen-Recorder/anyscrenrecorder1.png" alt="Dark Theme Interface" onclick="openLightbox(this.src)">
+                <img src="https://github.com/AryanMewada/Resources/raw/main/Any-Screen-Recorder/anyscrenrecorder%202.png" alt="Video Compilation Process" onclick="openLightbox(this.src)">
+                <img src="https://github.com/AryanMewada/Resources/raw/main/Any-Screen-Recorder/anyscrenrecorder%203.png" alt="System Tray Indicator" onclick="openLightbox(this.src)">
+            </div>
+        </section>
+
+        <section id="guide">
+            <h2 class="sec-title">How to Use</h2>
+            <div class="card">
+                <p style="color: var(--text-muted); margin-bottom: 20px;">Getting started with Any Screen Recorder is extremely simple. Follow these steps:</p>
+                <div class="tab-box">
+                    <h4>1. Configure Settings</h4>
+                    <p>Open the application and select your preferred recording resolution and frame rate.</p>
+                </div>
+                <div class="tab-box">
+                    <h4>2. Additional Options</h4>
+                    <p>Choose whether you want to include the mouse cursor, enable click highlights, or record system audio.</p>
+                </div>
+                <div class="tab-box">
+                    <h4>3. Select Destination & Begin</h4>
+                    <p>Use the browse button to choose where the final MP4 files should be saved. Click the 'Start Recording' button. The window will minimize to your system tray.</p>
+                </div>
+                <div class="tab-box">
+                    <h4>4. Stop & Process</h4>
+                    <p>Click the application icon in your system tray to stop capturing. The session will appear in the pending list. Select the pending file and click 'Turn into Video' to convert the raw data into an MP4 file.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="sec-title">System Requirements</h2>
+            <div class="card">
+                <div class="grid-2">
+                    <div>
+                        <h3 style="color: var(--primary); margin-bottom: 10px; font-size: 1.1rem;">Minimum Specifications</h3>
+                        <table class="spec-table">
+                            <tr><th>OS</th><td>Windows 7, 10, or 11</td></tr>
+                            <tr><th>CPU</th><td>Dual Core Processor</td></tr>
+                            <tr><th>RAM</th><td>2 GB</td></tr>
+                            <tr><th>Graphics</th><td>Integrated Graphics</td></tr>
+                            <tr><th>Storage</th><td>500 MB available space</td></tr>
+                        </table>
+                    </div>
+                    <div>
+                        <h3 style="color: var(--accent); margin-bottom: 10px; font-size: 1.1rem;">Recommended Specifications</h3>
+                        <table class="spec-table">
+                            <tr><th>OS</th><td>Windows 10 or 11</td></tr>
+                            <tr><th>CPU</th><td>Modern Quad Core CPU</td></tr>
+                            <tr><th>RAM</th><td>4 GB or more</td></tr>
+                            <tr><th>Graphics</th><td>Dedicated GPU</td></tr>
+                            <tr><th>Storage</th><td>SSD with 1 GB available space</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <h2 class="sec-title">FAQ</h2>
+            <div class="card">
+                <div style="margin-bottom: 20px;">
+                    <strong style="color: white; display: block; margin-bottom: 5px;">Q: Does it work well on older computers?</strong>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Yes, the application is designed to be lightweight by delaying the heavy video encoding process until after you finish recording.</p>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <strong style="color: white; display: block; margin-bottom: 5px;">Q: Can I record my webcam alongside the screen?</strong>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Currently, the software supports screen and system audio capture only. Webcam integration is not available in this version.</p>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <strong style="color: white; display: block; margin-bottom: 5px;">Q: Is there a watermark on the recorded videos?</strong>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">No, the software does not add any watermarks to the final exported video.</p>
+                </div>
+                <div>
+                    <strong style="color: white; display: block; margin-bottom: 5px;">Q: Are there any recording time limits?</strong>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">The software itself does not impose a time limit. Your recording length is only limited by the available storage space on your drive.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="sec-title">Important Notes & Troubleshooting</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3 style="margin-bottom: 15px; font-size: 1.2rem; color: white;">Things to Note</h3>
+                    <div class="tab-box">
+                        <h4>Temporary File Size</h4>
+                        <p>Because the software captures uncompressed data initially, the temporary <code>.screc</code> files can be quite large. Ensure you have adequate storage space. Once converted to MP4, the file size will be significantly reduced.</p>
+                    </div>
+                    <div class="tab-box">
+                        <h4>Drive Speed</h4>
+                        <p>For smoother 60 FPS recording, a storage drive with decent write speeds (like an SSD) is recommended to avoid dropped frames.</p>
+                    </div>
+
+                    <h3 style="margin-top: 30px; margin-bottom: 15px; font-size: 1.2rem; color: white;">Release Notes (v1.0.0)</h3>
+                    <ul class="feature-list" style="font-size: 0.95rem;">
+                        <li>Initial application release.</li>
+                        <li>Added Direct3D & WIC capture methods.</li>
+                        <li>Included raw data to MP4 conversion feature.</li>
+                        <li>Implemented system audio capture via WASAPI.</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3 style="margin-bottom: 15px; font-size: 1.2rem; color: white;">Basic Troubleshooting</h3>
+                    <div class="tab-box warning">
+                        <h4>Video processing seems stuck?</h4>
+                        <p>The conversion process requires free disk space. Please verify that your storage drive is not full.</p>
+                    </div>
+                    <div class="tab-box warning">
+                        <h4>No audio in the final video?</h4>
+                        <p>Ensure the "Record System Audio" option is checked before starting. Also, verify that your default audio playback device is active in Windows sound settings.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2 class="sec-title">Guides & Resources</h2>
+            <article class="blog-post">
+                <h1>How to Record Screen on a Low-End PC Without Lag (Free & No Watermark)</h1>
+
+                <p>Are you struggling to find a screen recorder that doesn't slow down your computer? If you have a budget PC or a laptop with just 2GB or 4GB of RAM, you probably already know the pain. Most popular screen recording software encodes video in real-time. This consumes massive amounts of CPU and memory, causing your games to lag and your PC to freeze.</p>
+
+                <p>But what if there was a way to capture your screen flawlessly without putting a heavy load on your processor? In this guide, we will show you exactly <strong>how to record screen on a low-end PC</strong> smoothly using a revolutionary, lightweight tool called <strong>Any Screen Recorder</strong>.</p>
+
+                <h2>Why Most Screen Recorders Cause Lag on Budget PCs</h2>
+                <p>Before we jump into the solution, it is important to understand the problem. When you hit the "Record" button on standard software, your PC does two heavy tasks at the same time: it captures the screen images, and it compresses them into an MP4 video file instantly. This real-time encoding is what causes frame drops and high CPU usage.</p>
+
+                <h2>The Solution: Any Screen Recorder</h2>
+                <p><a href="https://anyscreenrecorder.github.io/">Any Screen Recorder</a> takes a completely different and smarter approach. Designed by BSR Studios, this 2.39 MB lightweight screen recorder separates the capturing process from the encoding process. It captures raw screen data and saves it as a temporary <code>.screc</code> file. Only after you finish your recording session does it compile the data into a standard MP4 file. This keeps your CPU usage incredibly low during the actual recording.</p>
+
+                <h3>Key Features That Make It the Best for Low-End PCs:</h3>
+                <ul>
+                    <li><strong>Ultra-Lightweight:</strong> The software size is just under 3MB and uses minimal RAM.</li>
+                    <li><strong>No Watermark:</strong> Completely free to use with zero annoying watermarks on your final video.</li>
+                    <li><strong>Internal Audio Capture:</strong> Easily record system audio and gameplay sounds using Windows core audio APIs.</li>
+                    <li><strong>High FPS Support:</strong> Choose your preferred resolution and record at a smooth 60 FPS.</li>
+                    <li><strong>Cursor Highlighting:</strong> Perfect for creating software tutorials and presentations.</li>
+                </ul>
+
+                <h2>How to Record Gameplay and Screen Without Lag</h2>
+                <p>If you are wondering <strong>how to record gameplay on a 2GB RAM PC</strong>, just follow these simple steps:</p>
+
+                <ol>
+                    <li><strong>Download and Install:</strong> Head over to the official <a href="https://anyscreenrecorder.github.io/">Any Screen Recorder website</a> and download the free software for Windows 7, 10, or 11.</li>
+                    <li><strong>Configure Your Settings:</strong> Open the app. Select your desired recording resolution and set the frame rate (up to 60 FPS is supported).</li>
+                    <li><strong>Select Audio Options:</strong> If you want to know <strong>how to record internal audio on PC</strong>, simply check the "Record System Audio" box in the settings. You can also choose to highlight mouse clicks if you are making a tutorial.</li>
+                    <li><strong>Start Recording:</strong> Click the 'Start Recording' button. The app will minimize to your system tray, keeping out of your way while you game or work.</li>
+                    <li><strong>Stop and Process:</strong> Once you are done, click the tray icon to stop. Your session will appear in the pending list. Simply click 'Turn into Video' to compile your raw <code>.screc</code> data into a high-quality, lag-free MP4 file!</li>
+                </ol>
+
+                <h2>Things to Keep in Mind for the Best Performance</h2>
+                <p>Because Any Screen Recorder saves uncompressed raw data during the live session, the temporary files can be quite large. Make sure you have enough free storage space on your drive before you start recording. A drive with decent write speeds (like an SSD) is highly recommended if you plan to record at a solid 60 FPS.</p>
+
+                <h2>Conclusion</h2>
+                <p>You don't need an expensive, high-end gaming rig to create high-quality content or record tutorials. By understanding how video encoding affects your hardware and choosing the right optimized software, you can achieve smooth results. If you want to know <strong>how to screen record without watermark</strong> and without lag, <strong>Any Screen Recorder</strong> is your ultimate free solution.</p>
+
+                <p><strong><a href="https://anyscreenrecorder.github.io/">Download Any Screen Recorder for Free Today and Start Capturing!</a></strong></p>
+            </article>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="footer-nav">
+            <a href="info/about/">About Us</a>
+            <a href="info/contact/">Contact Us</a>
+            <a href="info/privacy/">Privacy Policy</a>
+            <a href="info/terms/">Terms & Conditions</a>
+            <a href="info/disclaimer/">Disclaimer</a>
+            <a href="info/dmca/">DMCA Policy</a>
+        </div>
+        <p>© 2026 BSR Studios. All rights reserved.</p>
+    </footer>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Zoomed Screenshot">
+    </div>
+
+    <script>
+        // Zoom functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+        }
+
+        // Live Download Counter Logic
+        const TRACKER_API = 'https://bsr-download-tracker.aryanmewadastudios.workers.dev';
+        const appKey = 'anyscreenrecorder'; 
+        const countDisplay = document.getElementById('downloadCount');
+
+        async function fetchDownloadCount() {
+            try {
+                const response = await fetch(`${TRACKER_API}/count/${appKey}`);
+                const data = await response.json();
+                countDisplay.innerText = `🔥 Total Downloads: ${data.count.toLocaleString()}`;
+            } catch (err) {
+                console.error("Fetch Error:", err);
+                countDisplay.innerText = "🔥 Trusted by thousands of users";
+            }
+        }
+
+        function triggerDownload() {
+            countDisplay.innerText = "⏳ Initiating Download...";
+            setTimeout(fetchDownloadCount, 4000); 
+        }
+
+        window.addEventListener('DOMContentLoaded', fetchDownloadCount);
+    </script>
+</body>
+</html>
