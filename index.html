@@ -185,29 +185,6 @@
         .blog-post strong { color: var(--text-main); font-weight: 600; }
         .blog-post code { background: var(--surface-light); padding: 3px 6px; border-radius: 6px; font-size: 0.9em; color: #cbd5e1; border: 1px solid rgba(255,255,255,0.1); }
 
-        /* AD Wrapper UI Protection */
-        .ad-wrapper { 
-            text-align: center; 
-            margin: 20px auto 40px auto; 
-            padding: 15px; 
-            background: rgba(255,255,255,0.02); 
-            border-radius: 12px; 
-            border: 1px dashed rgba(255,255,255,0.1); 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center;
-            max-width: 100%;
-            overflow: hidden;
-        }
-        .ad-label { 
-            font-size: 10px; 
-            color: var(--text-muted); 
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-            margin-bottom: 10px; 
-        }
-
         #lightbox { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); display: none; justify-content: center; align-items: center; z-index: 9999; cursor: zoom-out; }
         #lightbox img { max-width: 90%; max-height: 90%; border-radius: 8px; box-shadow: 0 0 50px rgba(0,0,0,0.5); }
 
@@ -223,7 +200,6 @@
             .blog-post { padding: 25px 20px; }
             .blog-post h1 { font-size: 1.6rem; }
             .blog-post h2 { font-size: 1.3rem; }
-            .ad-wrapper { padding: 10px; margin: 20px auto; }
             .btn-download { width: 100%; font-size: 1.1rem; }
         }
     </style>
@@ -282,7 +258,7 @@
             </div>
         </section>
 
-        <!-- Actual Download Section placed perfectly below features -->
+        <!-- Actual Download Section placed below features and gallery -->
         <section id="download-section">
             <div class="download-card">
                 <img src="https://github.com/AryanMewada/Resources/raw/main/Any_Screen_Recorder.png" alt="Any Screen Recorder Logo" class="dl-app-logo">
@@ -303,12 +279,11 @@
             </div>
         </section>
 
-        <!-- Native Ad: Placed IMMEDIATELY below the download box. User stares at it while waiting for the 4-second counter -->
-        <div class="ad-wrapper">
-            <span class="ad-label">Advertisement</span>
-            <script async="async" data-cfasync="false" src="https://pl29319945.profitablecpmratenetwork.com/1a39d12ee5e7385a95a870b9284c7a84/invoke.js"></script>
-            <div id="container-1a39d12ee5e7385a95a870b9284c7a84"></div>
-        </div>
+        <!-- ============================================== -->
+        <!-- NATIVE AD PLACEHOLDER (Auto-filled by ad-manager.js) -->
+        <!-- Placed immediately below download to maximize click rate while user waits -->
+        <!-- ============================================== -->
+        <div id="bsr-native-ad"></div>
 
         <section id="guide">
             <h2 class="sec-title">How to Use</h2>
@@ -448,7 +423,7 @@
                 <p>If you are wondering <strong>how to record gameplay on a 2GB RAM PC</strong>, just follow these simple steps:</p>
 
                 <ol>
-                    <li><strong>Download and Install:</strong> Head over to the official <a href="https://anyscreenrecorder.github.io/">Any Screen Recorder website</a> and download the free software for Windows 7, 10, or 11.</li>
+                    <li><strong>Download and Install:</strong> Head over to the official <a href="#download-section">Any Screen Recorder website</a> and download the free software for Windows 7, 10, or 11.</li>
                     <li><strong>Configure Your Settings:</strong> Open the app. Select your desired recording resolution and set the frame rate (up to 60 FPS is supported).</li>
                     <li><strong>Select Audio Options:</strong> If you want to know <strong>how to record internal audio on PC</strong>, simply check the "Record System Audio" box in the settings. You can also choose to highlight mouse clicks if you are making a tutorial.</li>
                     <li><strong>Start Recording:</strong> Click the 'Start Recording' button. The app will minimize to your system tray, keeping out of your way while you game or work.</li>
@@ -465,20 +440,11 @@
             </article>
         </section>
 
-        <!-- Adsterra Normal Banner (728x90): Placed at the very bottom right before the footer -->
-        <div class="ad-wrapper" style="border: none; background: transparent; padding: 0;">
-            <span class="ad-label" style="margin-bottom: 5px;">Advertisement</span>
-            <script>
-              atOptions = {
-                'key' : 'adb812b54025f902c8d46d9a82c76026',
-                'format' : 'iframe',
-                'height' : 90,
-                'width' : 728,
-                'params' : {}
-              };
-            </script>
-            <script src="https://www.highperformanceformat.com/adb812b54025f902c8d46d9a82c76026/invoke.js"></script>
-        </div>
+        <!-- ============================================== -->
+        <!-- NORMAL BANNER PLACEHOLDER (Auto-filled by ad-manager.js) -->
+        <!-- Placed at the very bottom right before the footer -->
+        <!-- ============================================== -->
+        <div id="bsr-normal-banner"></div>
 
     </div>
 
@@ -497,6 +463,12 @@
     <div id="lightbox" onclick="closeLightbox()">
         <img id="lightbox-img" src="" alt="Zoomed Screenshot">
     </div>
+
+    <!-- ============================================== -->
+    <!-- AD MANAGER SCRIPT -->
+    <!-- Loads all ads from a single file -->
+    <!-- ============================================== -->
+    <script src="ad-manager.js"></script>
 
     <script>
         // Zoom functionality
